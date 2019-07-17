@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formularios y Overlays</title>
+
+    <style>
+        
+            body{
+                display: flex;
+                justify-content: center;
+                height: 100vh;
+                align-items: center;
+            }
+
+            form{
+                width: 30%;
+                margin: auto;
+                border: 1px solid grey;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 20px;
+                border-radius: 5px;
+            }
+            
+            input{
+                width: 100%;
+                margin-bottom: 10px;
+                outline: 0;
+                padding: 10px;
+            }
+
+            input.is-active{
+                position: relative;
+                z-index: 2;
+            }
+
+            button{
+                padding: 5px;
+                width: 30%;
+                margin: auto;
+                cursor: pointer;
+                position: relative;
+                z-index: 2;
+            }
+
+            .overlay{
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0 , 0, .7);
+                display: none;
+            }
+            .overlay.is-active{
+                display: block;
+            }
+    </style>
+
+
+</head>
+
+<body>
+
+        <form action="">
+            <input  type="text" placeholder="User name" autocomplete="off">
+            <input  type="password" placeholder="Password">
+            <button> enviar </button>
+        </form>
+        <div class="overlay" id="overlay"></div>
+
+
+            <script>
+            
+                    const $inputList = document.querySelectorAll('input');
+                    const $overlay = document.querySelector("#overlay");
+                    
+                    $inputList.forEach(element => {
+                        
+
+                        element.addEventListener('focus', focus)
+                        element.addEventListener('blur', blur)
+ 
+                    });
+
+                    // quie es donde hago el codigo interesante para poder hacer poder tener el otro 
+                    // input en foco  
+                    $overlay.addEventListener('click', e => {
+
+                        $overlay.classList.remove('is-active')
+
+                    //en mi objeto del evento tengo estas propiedades las cuales me detectar en el punto de mi 
+                    //sitio web hice click   
+                    
+                    // coordena en X  coordenada en Y   
+                        // e.clientX  e.clientY
+
+                        // con la funcion anterior del documen lo que hacemos es pasarle dos parametros
+                        // 1 posicion en x 
+                        // 2 posicion en y
+                        // y esta funcion nos retornara lo que hay en ese punto de nuestro sitio web es decir nos puede
+                        // decir "en donde hiciste click encontre un input" entonces nos ayudara para hacer esta magia 
+
+                        const $mayBeIsAnInput = document.elementFromPoint(e.clientX , e.clientY)
+
+                            console.log($mayBeIsAnInput)
+
+                        //    le tenemos que indicar que sea igual a INPUT pero en mayuscula porque si no no lo hace valido
+                        //    si no lo queremos poner INPUT en mayusculas le podemos poner la funcion toLowerCase a nuestro
+                        //    $mayBeIsAnInput.tagName   
+                        if($mayBeIsAnInput.tagName == 'INPUT'){
+
+                            $mayBeIsAnInput.classList.add('is-active')  
+                            $overlay.classList.add('is-active')
+
+                            // le tengo que poner el foco para que me detecte mis eventos de focus y blur
+                            $mayBeIsAnInput.focus()
+
+                        }
+
+                    })
+
+                   function focus(e){
+
+                            e.srcElement.classList.add('is-active')
+                            $overlay.classList.add('is-active')
+
+                    }     
+                    function blur(e){
+                        e.target.classList.remove('is-active')
+                   }     
+
+            </script>
+
+</body>
+</html>
