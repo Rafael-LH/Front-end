@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu Acordeon</title>
+    <link rel="stylesheet" href="./styles.css">
+
+        <style>
+
+                *{
+                    font-family: sans-serif;
+                }
+
+                .container{
+                        width: 30%;
+                        margin: 40px auto 0px;
+                }
+
+                .container .container-items{
+                    list-style: none;     
+                    padding: 0px;
+                    margin: 20 0px 0px; 
+                }
+                .container .btn-show{
+                        color: #fff;
+                        padding: 5px 10px;
+                        background: rgb(207, 77, 77);
+                        cursor: pointer;
+                        text-align: center;
+                        border-radius: 4px;
+                }
+                .container-items{
+                    margin-top: 20px;
+                    height: 0;
+                    overflow: hidden;
+                    transition: all .7s;
+                }
+                .container-items .item{
+                    padding: 15px;
+                    background: brown;
+                    width: 100%;
+                    color: #fff;
+                    text-align: center;
+                    font-size: 1.3em;
+                    margin-bottom: 2px;
+                }
+                .btn-input-show:checked  ~ .container-items{
+                        height: 400px;
+                }
+                .btn-input-show{
+                    display: none;
+                }
+        </style>
+
+</head>
+<body>
+
+            <div class="container">
+                <input type="checkbox" class="btn-input-show" id="btn-show">
+                <label for="btn-show" class="btn-show">Show Menu</label>
+                <ul class="container-items">
+                   <li class="item">item 1</li>
+                   <li class="item">item 2</li>
+                   <li class="item">item 3</li>
+                   <li class="item">item 4</li>
+                   <li class="item">item 5</li>
+                   <li class="item">item 6</li>
+                   <li class="item">item 7</li>
+                </ul>
+            </div>
+
+</body>
+</html>
