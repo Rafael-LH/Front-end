@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>object fit css</title>
+
+        <style>
+            body{
+                background: #222;
+            }
+            .titulo{
+                color: #fff;
+                width: 100%;
+                text-align: center;
+            }
+            .contenedor-galeria{
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                margin: auto;
+                max-width: 1000px;
+            }
+            .galeria-img{
+                cursor: pointer;
+                width: 300px;
+                height: 200px;
+                border: 2px solid #fff;
+
+                object-fit: cover;
+                            /*fill*/ /*abarca todo el ancho y alto que yo le he especificado, y fill es el valor por defecto de object-fit*/
+                            /*contain*/ /*trata de adaptarse al alto y ancho que yo le especifico a mi imgen*/
+                            /*cover*/ /*
+                                        lo que hace es adaptarse al alcho y alto que le indico quedando las imagenes todas del mismo alto y ancho
+                                        sin que se miren estiradas se recomiendausar la propiedad cuando tenemos imagenes de distintos tamanios
+                                        */
+                            /*fill*/ /*abarca todo el ancho y alto que yo le he especificado*/
+
+                /* filtros*/
+                filter: brightness(70%);
+
+                       /* 1- nombre animacion 
+                       2- segundos de animacion 
+                       3- que sea infinita 
+                       4- que al llegar al final de la animacion se repita pero de arriba
+                          hacia abajo */
+                animation: escalar 1.5s infinite alternate;
+            }
+            @keyframes escalar{
+                0%{
+                    transform: scale(1);
+                }
+                100%{
+                    transform: scale(1.05);
+                }
+            }
+            .galeria-img:hover{
+                filter: brightness(100%);
+            }
+
+        </style>
+
+</head>
+<body>
+        <h1 class="titulo">
+            Galeria con imagenes de diversos tamanios
+        </h1>
+        <div class="contenedor-galeria">
+            <figure>
+                <img src="./src/images/paisaje1.jpg" alt="" class="galeria-img">
+            </figure>
+            <figure>
+                <img src="./src/images/paisaje2.jpg" alt="" class="galeria-img">
+            </figure>
+            <figure>
+                <img src="./src/images/paisaje3.jpg" alt="" class="galeria-img">
+            </figure>
+            <figure>
+                <img src="./src/images/paisaje4.jpg" alt="" class="galeria-img">
+            </figure>
+            <figure>
+                <img src="./src/images/paisaje5.jpg" alt="" class="galeria-img">
+            </figure>
+            <figure>
+                <img src="./src/images/paisaje1.jpg" alt="" class="galeria-img">
+            </figure>
+        </div>
+</body>
+</html>
