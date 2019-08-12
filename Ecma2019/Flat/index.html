@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <script>
+
+                //Flat -> desanida arreglos que estan dentro de otro arreglo
+                //flat() devolverá un nuevo array, en ningún caso mutará el array anterior!
+                const array = [1,2,3,[4,5] ];
+                console.log( array.flat() ); //si lo dejamos asi solo desanidara el primer elemento del arreglo anidado
+                //podemos pasarle la cantidad de desanidaciones con:
+                //flat() desanidara solo 1 (que es el valor por defecto) 
+                //flat(2) desanidara solo 2 arreglos anidados dentro de la anidacion y de esta manera podemos pasarle 
+                //parametros para desanidar lo que queramos
+
+                const arr2 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]]
+                for(let i = 0; i < arr2.length; i++){
+                    console.log(arr2[i] ); //imprimiendo sin desanidar
+                }
+
+                let ArrayDesanidado = arr2.flat(Infinity); //con Infinity desanida todo el arreglo con todas las //anidaciones
+                for(let i = 0; i < ArrayDesanidado.length; i++){
+                    console.log(ArrayDesanidado[i] );
+                }
+
+                const arra3 = [1,2,,3]; //si tenemos elementos vacios lo que hara flat es quitar ese elemento vacio
+                console.log(arra3.flat() );
+
+        </script>
+    
+</body>
+</html>
