@@ -9,7 +9,9 @@ img{
     width: 100%;
     max-width: 100%;
 }
-
+figure{
+    margin: 0px;
+}
 h1, h2, h3, h4, h5, h6{
     margin: 0;
 }
@@ -18,7 +20,7 @@ h1, h2, h3, h4, h5, h6{
     width: 100%;
     margin: auto;
 }
-.container-flex{
+.container--flex{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -42,20 +44,20 @@ h1, h2, h3, h4, h5, h6{
     font-weight: 100;
 }
 
-.main-header-contactInfo-phone{
+.main-header__contactInfo__phone{
     background: #DE423A;
     color: #fff;
     margin: 0px auto;
     padding: 10px;
 }
-.main-header-contactInfo-phone{
+.main-header__contactInfo__address{
         padding: 10px;
         margin: 0px;
 }
 
 /* lo que estamos haciendo aqui es seleccionar todas las clases que empiecen con
 la clase icon- o que contengan al inicio icon- le tenemos que poner el * para indicarle que todas*/
-.main-header [class*="icon-"]:before{
+.main-header [class*="icon-"]:before{ /*Esto es un selector de atributos*/
     position: relative;
     top: 2px;
     right: 5px;
@@ -71,12 +73,20 @@ la clase icon- o que contengan al inicio icon- le tenemos que poner el * para in
 .icon-menu{
     display: block;
     color: #fff;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.5em;
 }
-.socila-icon{
+.social-icon{
     display: flex;
     justify-content: space-between;
 }
-.socila-icon [class*="icon-"]{
+.social-icon [class*="icon__"]{ /*Selector de atributos*/
     color: black;
     margin-left: 10px;
     display: flex;
@@ -88,7 +98,7 @@ la clase icon- o que contengan al inicio icon- le tenemos que poner el * para in
     background: #fff;
     border-radius: 50%;
 }
-.socila-icon-link{
+.social-icon__link{
     text-decoration: none;
 }
 .menu {
@@ -101,17 +111,21 @@ la clase icon- o que contengan al inicio icon- le tenemos que poner el * para in
     list-style: none;
     background: rgba(0, 0, 0, .9);
     text-align: center;
+    height: 0px;
+    overflow: hidden;
+    transition: all .4s;
+
 }
-.menu-link{
+.menu__link{
     display: block;
     padding: 15px;
     color: #fff;
     text-decoration: none;
 }
-.menu-link:hover{
+.menu__link:hover{
     background: #DE423A;
 }
-.menu-link-select{
+.menu__link--select{
     background: #DE423A;
 }
 
@@ -121,7 +135,7 @@ la clase icon- o que contengan al inicio icon- le tenemos que poner el * para in
     position: relative;
 
 }
-.banner:before{
+.banner:before{ 
     /* todas las seudo clases deven de tener la propiedad content */
     content: '';
     position: absolute;
@@ -132,7 +146,7 @@ la clase icon- o que contengan al inicio icon- le tenemos que poner el * para in
     top: 0;
 }
 
-.banner-img{
+.banner__img{
     width: 100%;
     height: 500px;
     /* lo que hace esta propiedad es que si tu imagen se estira mucho pues con esta propiedad
@@ -140,9 +154,21 @@ la clase icon- o que contengan al inicio icon- le tenemos que poner el * para in
     el cual sirve para que no se estire la imagen entonces no se vera completa */
     object-fit: cover;
 }
-.banner-content{
+.banner__content{
     width: 90%;
     color: #fff;
     text-align: center;
+    position: absolute;
     z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size:  1.5em;
+    font-weight: bold;
+}
+
+
+.showMenu{
+    height: 196px;
+    transition: all .4s;
 }
