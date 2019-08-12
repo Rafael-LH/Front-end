@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object.entries</title>
+</head>
+<body>
+
+        <script>
+            // El compañero de Object.entries() ahora, además de //convertir un objeto en un array de arrays para poder //iterarlo, podremos también hacer el camino inverso: pasar //de un array de arrays a un Object de JavaScript!
+            // Supongamos, como ejemplo, que queremos elevar al cubo (^3) las habilidades de Eren
+            const $eren = { strength: 50, health: 100, height: 170 }
+            console.log($eren);
+            // Utilizamos nuestro ya conocido método `Object.entries`
+            // para pasar del dominio de los objetos al de los arrays...
+            const $aux = Object.entries($eren)
+            // > [["strength", 50], ["health", 100], ["height", 170]]
+            console.log($aux);
+            // Ahora que estamos en el dominio de los arrays, podemos hacer un simple `map`!
+            const $array = $aux.map(([key, value]) => [key, value ** 3])
+            // > [["strength", 125000], ["health", 1000000], ["height", 4913000]]
+            console.log($array);
+            // Hemos conseguido lo que queríamos, transformar los valores,
+            // pero ahora tenemos un array de arrays...
+
+            const $titanEren = Object.fromEntries($array) // ...para eso tenemos el nuevo método!!
+            // > { strength: 125000, health: 1000000, height: 4913000 } 
+            console.log($titanEren);
+        </script>
+</body>
+</html>
