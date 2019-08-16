@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buscador Tiempo Real JS</title>
+</head>
+<body>
+            <input type="text" id="form">
+            <ul id="container">
+                
+            </ul>    
+
+          <script>
+                    const array = ['pepe','pecas','pica','papas','con','un','pico','rafx'];
+                    const $container = document.querySelector("#container");
+                    const $btnSearch = document.querySelector("#form");
+
+                    const functionSearch = () =>{
+
+                        $container.innerHTML = '';    
+                        let name = $btnSearch.value.toLowerCase();   
+
+                        array.forEach(element => {
+                            if(element.indexOf(name) != -1){
+                                // indexOf retorna -1 cuando no encontro nada
+                                //indexOf retorna 0 o mayor a 0 cuando encontro algo. que ese algo es el indice de la palabra 
+                                    $container.innerHTML += `<li>${element}</li>`;
+                            } 
+                            console.log(`indice -1 = no encontro indice = | > 0 quiere decir que si encontro ( ${element.indexOf(name)} )`)
+                        });  
+                        if( $container.innerHTML == ''){
+                                $container.innerHTML = 'No encontramos nada we';
+                            }else if(name == ''){
+                                $container.innerHTML = '';
+                        }  
+                    }
+                    $btnSearch.addEventListener('keyup', functionSearch);
+          </script>  
+
+</body>
+</html>
