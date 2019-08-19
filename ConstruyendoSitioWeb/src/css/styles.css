@@ -19,12 +19,12 @@ h1, h2, h3, h4, h5, h6{
 .container{
     width: 100%;
     margin: auto;
+    /* border: 1px solid red; */
 }
 .container--flex{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; 
 }
 .column{
     width: 100%;
@@ -49,10 +49,14 @@ h1, h2, h3, h4, h5, h6{
     color: #fff;
     margin: 0px auto;
     padding: 10px;
+    text-align: end;
 }
 .main-header__contactInfo__address{
         padding: 10px;
         margin: 0px;
+        color: #fff;
+    text-align: end;
+
 }
 
 /* lo que estamos haciendo aqui es seleccionar todas las clases que empiecen con
@@ -148,7 +152,7 @@ la clase icon- o que contengan al inicio icon- le tenemos que poner el * para in
 
 .banner__img{
     width: 100%;
-    height: 500px;
+    height: 600px;
     /* lo que hace esta propiedad es que si tu imagen se estira mucho pues con esta propiedad
     puedes hacer que tu imagen no se vea estirada, el unico problemita es que le dara un zoom 
     el cual sirve para que no se estire la imagen entonces no se vera completa */
@@ -167,8 +171,222 @@ la clase icon- o que contengan al inicio icon- le tenemos que poner el * para in
     font-weight: bold;
 }
 
-
+.group--color .container{
+    background: #DE423A;
+    color: #fff;
+    padding: 20px 0px;
+    text-align: center;
+}
+.main__title{
+    margin: 15px 0px;
+    font-size: 1.8em;
+    font-family: 'Pasifico', cursive;
+    font-weight: 100px; /*reducir el grodor de la fuente*/
+}
+.column__title{
+    font-size: .8em;
+}
+.main__about__description .column:nth-child(2){
+    padding: 10px;
+}
+.btn{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
+    color: #fff;
+    background: #DE423A;
+    padding: 10px;
+    margin: 10px auto;
+}
+.group__title{
+    font-family: 'Pasifico', cursive;
+    text-align: center;
+    font-weight: 100; /*quita el grosor de nuestra fuente*/
+    font-size: 1.8em;
+    margin: 30px;
+}
+.today-special{
+    padding: 0px 10px;
+    margin: auto;
+}
+.today-special .column{
+    margin: 10px 0px;
+    text-align: center;
+}
+.today-special__img{
+    margin: auto;
+    max-width: 500px;
+}
+.today-special__title{
+    font-size: 1.3em;
+    padding: 10px 0px 20px;
+}
+.today-special__price{
+    font-size: 1.5em;
+    color: #DE423A;
+    font-weight: bold;
+}
+.main-footer{
+    background: #222;
+    color: #fff;
+    padding: 20px 10px;
+    font-size: 1.3em;
+}
+.copy{
+    text-align: center;
+    margin: auto;
+    font-size: .6em;
+    margin-top: 15px;
+}
+.main-footer [class*="icon-"]{
+    color: #fff;
+}
+.main-footer [class*="icon-"]:before{ /*Los iconos siempre se dibujan en la pseudo clase before*/
+    position: relative;
+    top: 3px;
+    right: 5px;
+}
+.column__txt{
+    font-size: .6em;
+}
+.column__txt a{
+    color: #fff;
+    text-decoration: none;
+}
 .showMenu{
     height: 196px;
     transition: all .4s;
+}
+.column--50-25{
+    width: auto;
+}
+@media screen and (min-width: 480px){
+    .logo{
+        color: #fff;
+    }
+    .main-header__contactInfo{
+        text-align: right;
+    }
+    .banner{
+        margin-top: -145px;
+        z-index: -1000;
+    }
+    .main-header__contactInfo__phone{
+        background: none;
+    }
+    .main-header__contactInfo__phone{
+        color: #fff;
+    }
+    .banner__content{
+        font-size: 2em;
+    }
+    .column--50{
+      width: 47%;
+    }
+    .main{
+        padding-bottom: 15px;
+    }
+    .main__about__description .column:nth-child(2){
+            padding-left: 20px;
+            font-size: .9em;
+    }
+    .main__about__description .btn{
+        margin: 0;
+    }
+    .today-special .column{
+        border: 5px solid #ddd;
+        padding: 5px;
+    }
+    .main-nav{
+        background: rgba(0, 0, 0, .85);
+    }
+    .today-special__img{
+        height: 200px;
+        object-fit: cover;
+    }
+    .main-footer .container--flex{
+        align-items: flex-start;
+    }
+    .column--33{
+        width: 33%;
+    }
+}
+
+@media screen and (min-width: 768px){
+
+        .main__title{
+            font-size: 2.2em;
+        }
+        .main__about__description{
+            margin-top: 35px;
+        }
+        .main__about__description .column--50:nth-child(2){
+            font-size: 1em;
+        }
+        .main__about__description .column--50:nth-child(2)
+        .column--txt{
+            line-height: 30px;
+        }
+        .column--50-25{
+            width: 30%;
+        }
+        .group__title{
+            font-size: 2.2em;
+        }
+}
+
+@media screen and (min-width: 1024px){
+        .container{
+            width: 1000px;       
+        }
+        .logo{
+            font-size: 2em;
+            padding: 0;
+        }
+        .main-header__contactInfo__phone,
+        .main-header__contactInfo__address{
+            padding-right: 0;
+            font-size: 1.15em;
+        }
+        .main-nav{
+            padding: 0;
+        }
+        .banner__img{
+            height: 700px;
+        }
+        .banner__content{
+            font-size: 2.5em;
+        }
+        .icon-menu{
+            display: none;
+        }
+        .menu{
+            display: flex;
+            height: auto;
+            position: static;
+            width: auto;
+        }
+        .group--color .container{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .main__title{
+            font-size: 2.3em;
+        }
+        .main__about__description .column--50:nth-child(2)
+        .column--txt{
+            line-height: 45px;
+            font-size: .9em;
+        }
+        .today-special__price{
+            font-size: 1.4em;
+        }
+        .today-special__price{
+            font-size: 1.8em;
+        }
+        .main-footer{
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
 }
