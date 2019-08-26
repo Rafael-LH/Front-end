@@ -21,7 +21,7 @@
                 margin: 0px;
             }
             body{
-                background-color: #AB88FF;
+                background-color: #8F57FD;
             }
             .header{
                 padding: 5px;
@@ -65,6 +65,35 @@
             .header__menu:hover .header__menu--list{
                 display: block;
             }
+            .main{
+                max-width: 800px;
+                margin: auto;
+                display: flex; 
+                justify-content: center;
+                flex-wrap: wrap;
+                align-content: center;
+                height: 300px;
+            }
+            .main__title{
+                width: 100%;
+                text-align: center;
+                color: #fff;
+                margin-bottom: 17px;
+            }
+            .main__search{
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 25px;
+                outline: 0;
+                border: 2px solid #fff;
+                color: #fff;
+                font-size: .9em;
+                padding: 12px;
+                font-family: 'Muli', sans-serif;
+            }
+            ::placeholder{
+                color: #fff;
+            }
     </style>
 
 <body>
@@ -86,6 +115,11 @@
                   </ul>   
             </div>
         </header>
+
+        <section class="main">
+            <h2 class="main__title">¿Qué quieres ver hoy ?</h2>       
+            <input class="main__search" type="text" placeholder="Buscar...">       
+        </section>
 
 </body>
 </html>
