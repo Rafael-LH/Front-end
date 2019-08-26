@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        /* Metodologias de CSS 
+
+        1- OOCSS (css orientado a objetos)
+             es css orientado a objetos en el cual creamos estilos base para evitar repetir codigo (estilos)
+             por ejemplo si tenemos un ancho y un padding que se esta repitiendo en muchas clases aqui estamos haciendo un mal
+             uso de las propiedades y eso no se tiene que hacer
+        
+        2- BEM (Block, Element, Modify)
+            tenemos la siguiente estructura de html 
+            
+            <header class="header"> bloque
+                <button class="header__button--yellow">yellow</button> elemento __button, modificador --yellow
+                <button class="header__button--red">red</button> elemento __button, modificador --red
+            </header>
+            
+        3- SMACSS (Arquitectura de CSS escalable y modular)
+            Esta metodologia esta conpuesta por 5 pasos
+
+            1- Base
+                dividir nuestros estilos en componentes base los cuales vamos a utilizar en todo nuestro proyecto
+
+            2- Layout
+                son elementos / componentes que se utilizan en nuestro sitio web una sola vez como el header o footer
+
+            3- Module
+                son componentes los cuales utilizaremos en nuestra aplicacion mas de una vez
+
+            4- State
+                quitar y poner estilos a un componente mediante una accion previa la cual hara este comportamiento
+                ejemplo: un boton el cual al hacer click cambien de color de un verde a un rojo
+
+            5- Theme
+                no todos los proyectos tienen temas pero si nuestro sitio web lo tiene tenemos que hacer 
+                un parcial por separado para poder crear todos estos temas. estos temas son como el ya tan usado en muchos
+                sitios web el modo oscuro
+
+        4- ITCSS (triangulo invertido de css)
+            separar nuestros archivos en ciertas partes para que no se convinen entre si 
+            Ajustes, Herramientas, Generico, Elementos, Objetos, Componentes y Utilidades
+        
+        5- ATOMIC DESING (Diseño de atomos)
+            esta metodologia en quimica y es para que nuestro css sea mas modular y escalable,
+            
+            1- Atomos
+                Elementos mas chiquitos como por ejemplo botones
+
+            2- Moleculas 
+                seria conjunto de esos botones y asi susesivamente va creciendo
+
+            3- Organismos     
+            4- Templates
+            5- Paginas
+
+        Paginas de referencia a estas metodologias 
+             https://platzi.com/clases/1640-frontend-developer/21887-oocss-bem-smacss-itcss-y-atomic-design/   
+             http://bradfrost.com/blog/post/atomic-web-design/
+        */
+            
+        /* NOTA FLEX 
+            Las dos propiedades flex-direction y flex-wrap son usadas a menudo en conjunto con la propiedad abreviada flex-flow, la cual fue creada para combinarlas. Esta propiedad abreviada, acepta un valor de cada una separada por un espacio.
+            Por ejemplo, puedes usar flex-flow para establecer filas y envolverlas.
+            Trata de usar flex-flow para volver a realizar el nivel anterior. */
+            
+            *{
+                margin: 0px;
+            }
+            .caja{
+                width: 100%;
+                height: 50px;
+                background-color: #ef4b4b;
+                display: flex;
+                align-items: center;
+                align-content: flex-start;
+                /* box-sizing: border-box; */
+            }
+            .child{
+                width: 10px;
+                height: 10px;
+                background-color: #fff;
+               align-items: center;
+            }
+    </style>
+</head>
+<body>
+
+        <div class="caja">
+            <div class="child">
+            </div>
+        </div>
+</body>
+</html>
