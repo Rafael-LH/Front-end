@@ -1,0 +1,17 @@
+{
+  "name": "frontenddevelopment",
+  "version": "1.0.0",
+  "description": "front for live",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "start-storybook"
+  },
+  "keywords": [
+    "JS"
+  ],
+  "author": "Rafael Lopez",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/html": "^5.1.11"
+  }
+}
