@@ -12,6 +12,8 @@
   "author": "Rafael Lopez",
   "license": "MIT",
   "devDependencies": {
-    "@storybook/html": "^5.1.11"
+    "@babel/core": "7.5.5",
+    "@storybook/html": "5.1.11",
+    "babel-loader": "8.0.6"
   }
 }
