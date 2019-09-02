@@ -1,0 +1,8 @@
+{
+    "Pokemon":[
+        {
+            "name": "Pikachu",
+            "image": "pikachu.jpeg"
+        }
+    ]
+}
