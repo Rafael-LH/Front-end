@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Muli&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+          crossorigin="anonymous" />
+
+</head>
+<body>
+        <header class="header header--color">
+                <figure>
+                    <img src="../assets/logo.png" class="header__logo" alt="Logo">
+                </figure>
+                <div class="header__menu">
+                      <div class="header__menu--profile">
+                            <figure>
+                                <img src="../assets/user.png" alt="User">
+                            </figure>
+                            <p>Perfil</p>
+                      </div>   
+                      <ul class="header__menu--list">
+                          <li><a href="#">Cuenta</a></li>
+                          <li><a href="#">Cerrar Sesión</a></li>
+                      </ul>   
+                </div>
+        </header>     
+        
+        <section class="login">
+                <section class="login__container">
+                    <h2>Inicia Sesión</h2>
+                    <form action="" class="login__container--form">
+                        <input class="input" type="text" placeholder="Correo">
+                        <input class="input" type="password" placeholder="Contraseña" >
+                        <button class="button">Inicial Sesión</button>
+                        <div class="login__container--remember-me">
+                            <label>
+                                <input type="checkbox" name="" id="cbox1" value="checkbox">   
+                                Recuérdame                             
+                            </label>
+                            <a href="/">Olvidé mi contraseña</a>
+                        </div>
+                    </form>
+                    <section class="login__container--social-media">
+                           <p> <i class="fab fa-google"></i><span>Inicia sesión con google</span></p>
+                           <p> <i class="fab fa-twitter"></i><span>Inicia sesión con twitter </span></p>
+                    </section>
+                    <p class="login__container--register">
+                          No tienes ninguna cuenta <a href="#">Regístrate</a>  
+                    </p>
+                </section>            
+        </section>
+
+        <footer class="footer">
+            <a href="#">Terminos de uso</a>
+            <a href="#">Declaración de privacidad</a>
+            <a href="#">Centro de ayuda</a>
+        </footer>
+
+</body>
+</html>
