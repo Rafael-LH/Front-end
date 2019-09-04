@@ -17,7 +17,8 @@
 
         <header class="header">
             <figure>
-                <img src="./assets/logo.png" class="header__logo" alt="Logo">
+                <!-- si la accesibilidad de pantalla no nos reconoce nuestra imagen del sitio ponemos el atributo tabindex -->
+                <img tabindex="0" src="./assets/logo.png" class="header__logo" alt="Logo">
             </figure>
             <div class="header__menu">
                   <div class="header__menu--profile">
@@ -35,8 +36,11 @@
 
         <section class="main">
             <section class="search">
-                <h2 class="search__title">¿Qué quieres ver hoy ?</h2>       
-                <input class="search__input" type="text" placeholder="Buscar...">       
+                <h2 class="search__title">¿Qué quieres ver hoy ?</h2>     
+                <!-- todos nuestros input deven de tener un label, en este caso no lo ponenmos porque no lo necesitamos 
+                y para tener una buena semantica y que la accesibilidad de pantalla lo reconosca lo que hacemos poner el 
+                atributo aria-label seguido del nombre que le queremos poner     -->
+                <input aria-label="search__input" class="search__input" type="text" placeholder="Buscar...">       
             </section>
     
         </section>
