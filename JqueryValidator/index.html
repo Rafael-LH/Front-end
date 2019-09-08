@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" id="documentHtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu Acordeon</title>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+        <style>
+            .error{
+                color: red;
+            }
+        </style>
+</head>
+<body>
+           
+      <form  class="container mt-5" id="form-register" action="register.html">
+            <div class="row">
+                    <div class="form-group col-6">
+                        <label for="nombre">Nombre(s)</label>
+                        <input type="text" class="form-control" autocomplete="off"  id="nombre" name="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="apellido">Apellido(s)</label>
+                        <input type="text" class="form-control" autocomplete="off" id="apellido" name="apellido" placeholder="Apellido">
+                    </div>
+                </div>
+            <div class="form-group">
+                 <label for="email">Email address</label>
+                 <input type="email" class="form-control" autocomplete="off" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" autocomplete="off" id="password" name="password" placeholder="Password">
+                </div>
+                <div class="form-group col-6">
+                    <label for="exampleInputPassword1">Confirm Password</label>
+                    <input type="password" class="form-control" autocomplete="off" id="passwordConfirm" name="passwordConfirm" placeholder="Password">
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+      </form>   
+
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>  
+        <script src="./jquery_validator.js"></script>        
+
+        <script>
+               $("document").ready(function(){
+
+                    // Metodo custom
+
+                    $.validator.addMethod("strongPassword", function(value, element){
+                            return this.optional(element) //esto es por si el elemento es requerido o no, si no es requerido no hara la validación 
+                                    || value.length >= 6
+                                    && /[a-z]{1,}/i.test(value);
+                    }, "Tu contraseña debe de contener por lo menos 6 caracteres"); //si retorna false, aparecera este error por pantalla
+
+                    $("#form-register").validate({
+                        rules:{
+                            nombre:{
+                                required: true,
+                                // lettersonly: true
+                            },
+                            apellido:{
+                                required: true,
+                                // lettersonly: true
+                            },
+                            email:{
+                                required: true,
+                                email: true
+                            },
+                            password:{
+                                required: true,
+                                strongPassword: true //llamamos a nuestro validador custom que hicimos en la parte de arriba
+                            },
+                            passwordConfirm:{
+                                required: true,
+                                equalTo: "#password"
+                            }
+                        },
+                        messages:{
+                            email:{
+                                required: "No puedes dejar este campo vacío",
+                                email: "Ingresa un correo valido"
+                            },
+                            password:{
+                                required: "No puedes dejar este campo vacío"
+                            },
+                            passwordConfirm:{
+                                required: "No puedes dejar este campo vacío",
+                                equalTo: "Las contraseñas no coinciden"
+                            },
+                            nombre:{
+                                required: "No puedes dejar este campo vacío",
+                                lettersonly: "Solo puedes ingresar letras"
+                            },
+                            apellido:{
+                                required: "No puedes dejar este campo vacío",
+                                lettersonly: "Solo puedes ingresar letras"
+                            },
+                        }
+                    });
+               }); 
+        </script>        
+      
+</body>
+</html>
