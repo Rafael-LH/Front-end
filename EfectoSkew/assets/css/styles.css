@@ -1,0 +1,141 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+.container{
+    max-width: 1090px;
+    margin: auto;
+}
+header{
+    width: 100%;
+    /* height: 100vh; */
+    height: 600px;
+    overflow: hidden;
+    background-image: url('../img/header.jpg');
+    /* Si una imagen de fondo background-image es especificada, background-attachment determina si la imagen será fija 
+    dentro de la pantalla o se desplazará junto al bloque contenedor. */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+}
+.container-header{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start
+}
+.container-header .container-header__titulo, .container-header__subtitulo{
+    width: 100%;
+    color: #fff;
+    z-index: 1;
+}
+.container-header .container-header__titulo{
+    font-size: 85px;
+}
+.container-header .container-header__subtitulo{
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 32px;
+}
+.button--header{
+    color: #fff;
+    z-index: 1;
+    border: 1px solid #fff;
+}
+.button{
+    display: inline-block;
+    padding: 6px;
+    width: 128px;
+    font-size: 19px;
+    text-decoration: none;
+    border-radius: 16px;
+    text-align: center;
+}
+.sesgoabajo{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 35vh 100vw;
+    border-style: solid;
+    border-color: transparent transparent #fff;
+}
+.overlay{
+    background-color: rgba(0, 0, 0, .4);
+}
+main .container-main{
+    max-width: 1090px;
+    margin: auto;
+    padding: 52px 10px;
+}
+main .container-main--sub{
+    width: 100%;
+}
+main .container-main__title{
+    text-align: center;
+    font-size: 56px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+main .container-main__subtitle{
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.container-main--sub .container-main__p{
+    margin-bottom: 13px;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 24px; /*Salto de linea en pixeles (para que el texo no este pegado entre lineas)*/
+    color: grey;
+}
+.container-main--sub .button--main{
+    border: 1px solid grey;
+    color: black;
+    margin: 24px 0px 0px;
+}
+
+.container-main-image{
+    padding: 0px 10px;
+    height: 600px;
+    width: 100%;
+    background-image: url('../img/main.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.main-image-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-image-content__title{
+    color: #fff;
+    font-weight: bolder;
+    font-size: 56px;
+    text-align: center;
+    z-index: 2;
+}
+.sesgoarriba{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .2);
+    border-width: 35vh 100vw 0 0;
+    border-style: solid;
+    border-color: #fff transparent transparent;
+}
