@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrow Functions</title>
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+            background: linear-gradient(#141E30, #243B55);
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+
+        }
+        .warning{
+            color: #ffc107; 
+        }
+        .danger{
+            color: #dc3545; 
+        }
+        .hiddenButtons{
+            display: none;
+        }
+        p{
+            font-size: 1.5em;
+            color: #fff;
+            font-weight: bolder;
+            width: 100%;
+            text-align: center;
+        }
+        h1{
+            color: aqua;
+        }
+        span{
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <p>
+                This es el objeto contexto de JavasCript en el cual se está ejecutando el código actual.
+            </p>
+            <h1 id="showPokemon"></h1>
+            <span id="containerButtons" class="hiddenButtons">
+                <button id="type">Type</button>
+                <button id="name">Name</button>
+                <button id="random">Random</button>
+            </span>
+        </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
