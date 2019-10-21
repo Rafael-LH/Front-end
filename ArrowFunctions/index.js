@@ -99,5 +99,8 @@ class Pokemon extends API{
 const pikachu = new Pokemon
 pikachu.fetch(25);
 
+// Como un método de un objeto
+// Cuando una función es llamada como un método de un objeto, el this cambia por el metodo del objeto llamado.
+
 
 
