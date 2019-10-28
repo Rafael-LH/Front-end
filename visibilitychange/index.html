@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visibilitychange</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .conatainer{
+            height: 100vh;
+            width: 100%;
+            background-color: pink;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        p{
+            font-size: 1.2em;
+            color: #fff;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="conatainer">
+        <div id="subContainer">
+
+        </div>
+    </div>
+    <script>
+        const container = document.querySelector('#subContainer')
+        document.addEventListener('visibilitychange', function(e){ //tomamos todo el view port y se lo asignamos al evento que estara
+            // a la escucha del visibilitychange
+            
+            let isVisible = document.visibilityState === 'visible' //miramos el estado del visibility
+
+            if(isVisible){
+                container.innerHTML += createTemplate('Regresamos, es visible el viewport')
+            }else{
+                container.innerHTML += createTemplate('Tap, no es visible el viewport')
+            }
+        });
+        function createTemplate(state){
+            return(
+                `
+                <p>${state}</p>
+                `
+            )
+        }
+    </script>
+</body>
+</html>
