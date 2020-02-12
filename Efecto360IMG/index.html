@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Efecto 360 IMG</title>
+</head>
+  <style>
+      body{
+          height: 100vh;
+          margin: 0px;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          flex-direction: column;
+      }
+      input{
+          width: 768px;
+      }
+      .loading{
+          position: absolute;
+      }
+  </style>  
+<body>
+    <canvas id="canvas" width="768" height="512"></canvas>
+    <input type="range" min="1" max="36" step="1" value="1" id="slider">
+    <h1 id="loading" class="loading">Loading....</h1>
+    <script>
+        //Para poder acceder al valor del input slider no es necesario llamandolo con document.querySelector('#slider')
+        //si no que tamben con el puro nombre del id lo podemos llamar y mandar a imprimir su valor como acontinuación
+        // console.log(slider);
+
+    const slider = document.querySelector('#slider')
+    const canvas = document.querySelector('#canvas')
+    const images = []
+    const ctx = canvas.getContext('2d')
+
+    window.addEventListener('load', pageLoaded)
+    function pageLoaded() {
+            for (let i = 1; i < 36; i++) {
+                // padStart(cuantos elementos tendra este rellenador de espacios, con que los voy a sustituir)
+
+                //elementos que tendra mi rellenador de espacion / sustitucion de los espacios que en este caso seria con 00 
+                const number = i.toString().padStart(2, '00'); // mientras i solo tenga un numero lo que hara es rellenar el espacio vacio con 01, 02, 03 ... 09 y al llegar i = 10 ya no rellenara nada
+                const url = `https://stockx-360.imgix.net/adidas-Yeezy-Boost-350-V2-Yecheil/Images/adidas-Yeezy-Boost-350-V2-Yecheil/Lv2/img${number}.jpg?auto=format,compress&q=90&updated_at=1574449122&w=1000`
+                const image = new Image()
+                image.src = url;
+                
+                // image.setAttribute('src', url) tambien de esta manera se puede hacer
+                image.addEventListener('load', () =>{
+                    images[i] = image
+                    setTimeout(()=>{
+                        if (i === 1) 
+                        loadImage(i)
+                        document.querySelector('#loading').style.display = 'none'
+                    }, 2000)
+                })
+            }
+        }
+        function loadImage(index) {
+            //imagen que quiero renderizar , posicion en el canvas X, posicion en el canvas Y, Ancho en canvas que quiero abarcar y Alto en canvas que quiero abarcar 
+            ctx.drawImage(images[index], 0, 0, canvas.width, canvas.height)
+        }   
+        // handleInputSlider: esta convencion la utilizo por me dice handle es el manejador `de quien ?` del evento `input`  `de quien ?` de Slider 
+                                                // manejador - evento - elmento
+        slider.addEventListener('input', handleInputSlider )
+        function handleInputSlider(){
+            loadImage((this.value == 36) ? 1 : this.value)
+        }
+    </script>
+</body>
+</html>
