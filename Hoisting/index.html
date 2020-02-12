@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hoisting</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .pokemon{
+           
+        }
+    </style>
+</head>
+<body>
+    <h1>Hoisting</h1>
+    <p class="pokemon" id="pokemon"></p>
+
+    <script>
+
+        // Hoisting lo tienen las funciones normales no las arrow function y las variables declaradas con var    
+
+        // de esta manera lo podemos hacer y no nos marcara error ya que javascript lo que hace en la funcione es
+        // hoisting y la eleva por lo tanto la funcion quedara arriba de la llamada de la funcion
+        // pokemon()
+        // function pokemon() {
+        //     console.log(`Pokemon`);
+        // }
+
+        var pokemonName = 'Pikachu';
+        function pokemon() {
+            console.log(pokemonName);
+        }
+        pokemon()
+    </script>
+</body>
+</html>
