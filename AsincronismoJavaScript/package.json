@@ -1,0 +1,17 @@
+{
+  "name": "asincronismojavascript",
+  "version": "1.0.0",
+  "description": "Asincronismo con JavaScript",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JS",
+    "Async",
+    "Event",
+    "Loop"
+  ],
+  "author": "Rafael Lopez",
+  "license": "MIT"
+}

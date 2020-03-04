@@ -15,7 +15,7 @@ async function getFirstCharacter() {
  const resultAllCharacters = await getAllCharacters()
  const resultFirstCharacter = await getFirstCharacter()
  const image = new Image()
-console.log(resultAllCharacters);
+// console.log(resultAllCharacters);
 
  image.src = resultFirstCharacter.image
  image.addEventListener('load', () => {
