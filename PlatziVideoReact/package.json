@@ -1,0 +1,21 @@
+{
+  "name": "platzivideoreact",
+  "version": "1.0.0",
+  "description": "Platzi video con ReactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Webpack",
+    "JS",
+    "ReactJS",
+    "Babel"
+  ],
+  "author": "Rafael Lopez",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
