@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
 
-import './assets/css/styles.css'
+import './assets/sass/app.scss'
 import HelloWorld from './components/HelloWorld'
 
 render(<HelloWorld />, document.getElementById('root'))

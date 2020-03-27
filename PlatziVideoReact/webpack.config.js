@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = env => {
+ 
  const mode = env.NODE_ENV
  let plugins = []
  
@@ -38,7 +39,7 @@ return{
  },
  module:{
   rules:[
-   
+
     {
      test: /\.(js|jsx)$/,
      exclude: /(node_modules)/,
@@ -57,8 +58,8 @@ return{
     },
 
     {
-     test: /\.(css)$/,
-     use:[ mode == 'development' ? 'style-loader': MiniCssExtractPlugin.loader, 'css-loader']
+     test: /\.s[ac]ss$/i,
+     use:[ mode == 'development' ? 'style-loader': MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
     },
 
   ]
