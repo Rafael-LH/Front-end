@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Registers = () => (
   <section className='register'>
@@ -8,9 +9,11 @@ const Registers = () => (
         <input className='input--register' type='text' placeholder='Nombre' />
         <input className='input--register' type='text' placeholder='Correo' />
         <input className='input--register' type='password' placeholder='Contraseña' />
-        <button className='button--register'>Registrarme</button>
+        <input type='button' className='button--register' value='Registrarme' />
       </form>
-      <a href='/'>Iniciar sesión</a>
+      <Link to='/login'>
+        Iniciar sesión
+      </Link>
     </section>
   </section>
 );
