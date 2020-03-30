@@ -1,7 +1,8 @@
-import React, {Component} from 'react'
-import {render} from 'react-dom'
+import React from 'react';
+import { render } from 'react-dom';
 
-import './assets/sass/app.scss'
-import HelloWorld from './components/HelloWorld'
+import './assets/sass/app.scss';
+import App from './components/App';
 
-render(<HelloWorld />, document.getElementById('root'))
+render(<App />, document.getElementById('root'));
+
