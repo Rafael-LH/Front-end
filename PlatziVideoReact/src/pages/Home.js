@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Search from '../components/Search';
-import ListItems from '../components/ListItems';
+
+import Search from 'Components/Search';
+import ListItems from 'Components/Carousel';
 
 export default class Home extends Component {
   render() {

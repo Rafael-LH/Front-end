@@ -31,6 +31,10 @@ module.exports = (env) => {
     },
     resolve: {
       extensions: ['.js', '.jsx'],
+      alias: {
+        Images: path.resolve(__dirname, 'src/assets/images/'),
+        Components: path.resolve(__dirname, 'src/components/'),
+      },
     },
     devServer: {
       contentBase: path.resolve(__dirname, '/'),

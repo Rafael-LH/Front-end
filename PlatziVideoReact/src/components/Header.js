@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import userIcon from '../assets/images/user-icon.png';
-import logoPlatzi from '../assets/images/logo-platzi-video-BW2.png';
+import userIcon from 'Images/user-icon.png';
+import logoPlatzi from 'Images/logo-platzi-video-BW2.png';
 
 const Header = (props) => (
   <header className='header'>
