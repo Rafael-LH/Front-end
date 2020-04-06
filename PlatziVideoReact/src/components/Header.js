@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import userIcon from 'Images/user-icon.png';
-import logoPlatzi from 'Images/logo-platzi-video-BW2.png';
+import userIcon from '@Images/user-icon.png';
+import logoPlatzi from '@Images/logo-platzi-video-BW2.png';
 
-const Header = (props) => (
+const Header = () => (
   <header className='header'>
     <Link to='/'>
       <img className='header__img' src={logoPlatzi} alt='Platzi Video' />

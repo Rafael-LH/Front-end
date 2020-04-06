@@ -1,14 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Layout from 'Components/Layout';
+import Layout from '@Components/Layout';
 import Home from './Home';
 import Register from './Register';
 import Login from './Login';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Layout>
         <Switch>
           <Route exact path='/' component={Home} />
@@ -16,7 +16,7 @@ const App = () => {
           <Route exec path='/login' component={Login} />
         </Switch>
       </Layout>
-    </BrowserRouter>
+    </Router>
   );
 };
 

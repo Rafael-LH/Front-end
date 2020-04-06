@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import Search from 'Components/Search';
-import ListItems from 'Components/Carousel';
+import Search from '@Components/Search';
+import ListItems from '@Components/Carousel';
 
-export default class Home extends Component {
-  render() {
-    return (
-      <div>
-        <Search />
-        <ListItems />
-      </div>
-    );
-  }
-}
+const Home = () => {
+  return (
+    <div>
+      <Search />
+      <ListItems />
+    </div>
+  );
+};
+export default Home;

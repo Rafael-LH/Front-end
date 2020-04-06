@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import GoogleIcon from 'Images/google-icon.png';
-import TwitterIcon from 'Images/twitter-icon.png';
+import GoogleIcon from '@Images/google-icon.png';
+import TwitterIcon from '@Images/twitter-icon.png';
 
 const Login = () => (
   <section className='login'>

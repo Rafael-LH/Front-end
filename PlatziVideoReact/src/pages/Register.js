@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
-import Registers from 'Components/RegisterView';
+import React from 'react';
+import Registers from '@Components/RegisterView';
 
-export default class Register extends Component {
-  render() {
-    return <Registers />;
-  }
-}
+const Register = () => <Registers />;
+
+export default Register;
 
