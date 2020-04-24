@@ -303,7 +303,7 @@ input{
 }
 
 .error{
-    background: linear-gradient(#21C08B, #AB88FF); 
+    background: linear-gradient(#21C08B, #AB88FF);   
     height: calc(100vh - 177px);
     display: flex;
     justify-content: center;
